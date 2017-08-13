@@ -34,6 +34,10 @@ public class ValidateEmail {
 		}
 		return valid;
 	}
+	
+	public void test () {
+		System.out.println("testing git commit and push");
+	}
 
 	private static boolean isSmallAlphaBet(char c) {
 		if(c>='a' && c<='z')
