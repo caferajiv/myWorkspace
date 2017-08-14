@@ -216,7 +216,7 @@ public class LinkedList {
 			Node node= new Node();
 			node=Head;
 			while(node.getNextNode()!=null){
-				System.out.print(node.getData());
+				System.out.print(node.getData()+" ");
 				node=node.getNextNode();
 			}
 			System.out.println(node.getData());
