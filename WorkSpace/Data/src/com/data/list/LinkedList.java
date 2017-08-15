@@ -63,6 +63,22 @@ public class LinkedList {
 			count++;
 		}
 	}
+	public void addLast(Node node){
+		//Node node=new Node(data);
+		if(isEmpty()){
+			Head=node;
+			Head.setNextNode(null);
+			count = 1;
+		}else{
+			Node tempNode=new Node();
+			tempNode=Head;
+			while(tempNode.getNextNode()!=null){
+				tempNode=tempNode.getNextNode();
+			}
+			tempNode.setNextNode(node);
+			count++;
+		}
+	}
 
 	public void insertAtLoc(int data, int loc){
 		if(loc<0){
