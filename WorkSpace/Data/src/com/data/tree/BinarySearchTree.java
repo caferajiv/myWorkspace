@@ -6,6 +6,20 @@ import com.data.queue.Queue;
 public class BinarySearchTree {
 	
 	private TNode root;
+	/**
+	 * @return the root
+	 */
+	public TNode getRoot() {
+		return root;
+	}
+
+	/**
+	 * @param root the root to set
+	 */
+	public void setRoot(TNode root) {
+		this.root = root;
+	}
+
 	private int count;
 	
 	public BinarySearchTree(){
