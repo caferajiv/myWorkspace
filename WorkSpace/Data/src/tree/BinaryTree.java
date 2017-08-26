@@ -6,38 +6,79 @@ import node.TreeNode;
 
 public class BinaryTree {
 	
+	/**
+	 * @return the root
+	 */
+	public TreeNode getRoot() {
+		return root;
+	}
+
+	/**
+	 * @param root the root to set
+	 */
+	public void setRoot(TreeNode root) {
+		this.root = root;
+	}
+
 	private TreeNode root;
 	private int count;
 	
 	public void addChild(int data)
 	{
-		if(root==null) return ;
-		TreeNode node = new TreeNode();
-		node=root;
+		if(root==null){
+		TreeNode node = new TreeNode(data);
+		root=node;
+		}else{
+			TreeNode node = new TreeNode();
+			node = root;
 		while(node!=null)
 		{
-			if(node.getLeftChild()!=null)
-			{ 
+			if(node.getLeftChild()==null){
+				node.setLeftChild(new TreeNode(data));
+				return;
+			}else if(node.getRightChild()==null){
+				node.setRightChild(new TreeNode(data));
+				return;
+			}else if(node.getLeftChild()!=null && node.getRightChild()!=null){
 				node = node.getLeftChild();
 			}
-			else if(node.getLeftChild()==null)
-			{
-				node.setLeftChild(new TreeNode(data));
-				count++;
-			}
-			else if(node.getRightChild()!=null)
-			{ 
-				node= node.getRightChild();
-			}
-			else if(node.getRightChild()==null)
-			{
-				node.setRightChild(new TreeNode(data));
-				count++;
-			}
 			
+			
+		}
+	}
+		
+	}
+	public void addChildBalanced(int data){
+
+		if(root==null){
+		TreeNode node = new TreeNode(data);
+		root=node;
+		} else {
+			TreeNode node = new TreeNode();
+			node = root;
+			ArrayBlockingQueue<TreeNode> Q = new ArrayBlockingQueue<TreeNode>(10);
+			Q.offer(node);
+			while (Q.peek() != null) {
+				TreeNode tnode = Q.poll();
+				if(tnode.getLeftChild()!=null) Q.offer(tnode.getLeftChild());
+				if(tnode.getRightChild()!=null) Q.offer(tnode.getRightChild());
+				if (tnode.getLeftChild() == null) {
+					TreeNode newNode = new TreeNode(data);
+					tnode.setLeftChild(newNode);
+					Q.offer(newNode);
+					return;
+				} else if (tnode.getRightChild() == null) {
+
+					TreeNode newNode = new TreeNode(data);
+					tnode.setRightChild(newNode);
+					Q.offer(newNode);
+					return;
+				}
+			}
 		}
 		
 	}
+	
 	
 	public void deleteChild(int data)
 	{
@@ -76,10 +117,10 @@ public class BinaryTree {
 	
 	public void InorderTraversal(TreeNode node)
 	{
-		if(root!=null)
+		if(node!=null)
 		{
-			InorderTraversal(root.getLeftChild());
-			System.out.println(root);
+			InorderTraversal(node.getLeftChild());
+			System.out.print(node + " ");
 			InorderTraversal(node.getRightChild());
 			
 		}
@@ -87,10 +128,10 @@ public class BinaryTree {
 	
 	public void PreorderTraversal(TreeNode node)
 	{
-		if(root!=null)
+		if(node!=null)
 		{
-			System.out.println(root);
-			PreorderTraversal(root.getLeftChild());
+			System.out.println(node);
+			PreorderTraversal(node.getLeftChild());
 			PreorderTraversal(node.getRightChild());
 			
 		}
@@ -98,11 +139,11 @@ public class BinaryTree {
 	
 	public void PostorderTraversal(TreeNode node)
 	{
-		if(root!=null)
+		if(node!=null)
 		{
-			PostorderTraversal(root.getLeftChild());
+			PostorderTraversal(node.getLeftChild());
 			PostorderTraversal(node.getRightChild());
-			System.out.println(root);
+			System.out.println(node);
 			
 		}
 	}
