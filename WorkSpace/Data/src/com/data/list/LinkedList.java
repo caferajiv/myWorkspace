@@ -46,6 +46,18 @@ public class LinkedList {
 			count++;
 		}
 	}
+	public void addFirst(Node node){
+		if(isEmpty()){
+			Head=node;
+			Head.setNextNode(null);
+			count = 1;
+
+		}else{
+			node.setNextNode(Head);
+			Head=node;
+			count++;
+		}
+	}
 
 	public void addLast(int data){
 		Node node=new Node(data);
@@ -110,6 +122,73 @@ public class LinkedList {
 		}
 
 	}
+	
+	
+	public void insertNodeAt(Node node, int loc){
+
+		if(loc<0){
+			System.out.println("Location cannot be negative!!");
+		}else{
+			if(loc>count){
+				System.out.println("Cannot insert at location "+loc);
+			}else{
+				if(loc==0){
+					addFirst(node);
+				}else if(loc==count){
+					addLast(node);
+				}else{
+					Node tempNode = new Node();
+					tempNode=Head;
+					int tempCount=0;
+					while(tempNode.getNextNode()!=null && tempCount!=loc-1){
+						tempNode=tempNode.getNextNode();
+						tempCount++;
+					}
+					
+					node.setNextNode(tempNode.getNextNode());
+					tempNode.setNextNode(node);
+				}
+
+			}
+
+		}
+
+	
+	}
+	
+	public void replaceNodeAt(Node node, int loc){
+
+		if(loc<0){
+			System.out.println("Location cannot be negative!!");
+		}else{
+			if(loc>count){
+				System.out.println("Cannot insert at location "+loc);
+			}else{
+				if(loc==0){
+					addFirst(node);
+				}else if(loc==count){
+					addLast(node);
+				}else{
+					Node tempNode = new Node();
+					tempNode=Head;
+					int tempCount=0;
+					while(tempNode.getNextNode()!=null && tempCount!=loc-1){
+						tempNode=tempNode.getNextNode();
+						tempCount++;
+					}
+					
+					node.setNextNode(tempNode.getNextNode().getNextNode());
+					tempNode.setNextNode(node);
+				}
+
+			}
+
+		}
+
+	
+	}
+	
+	
 	
 	public int removeFirst(){
 		if(isEmpty()){
