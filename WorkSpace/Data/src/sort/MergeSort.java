@@ -2,13 +2,25 @@ package sort;
 
 public class MergeSort {
 
+	public static void main(String[] args) {
+		int[] unsortedArray = new int[] { 3, 5, 7, 14, 89, 4, 56, 67, 34, 24,
+				17, 9, 23 };
+		
+		int[] arr = { 130, 3, 235, 36, 78, 0, 11, 125, 10, 144, 19, 78 };
+		int[] temp = new int[arr.length]; 
+		int low=0;
+		int high= arr.length-1;
+		mergesort(arr,temp, low, high);
+		for (int i : temp) {
+			System.out.print(i+" ");
+		}
+	}
 
 	public static void mergesort(int[] a, int[] temp, int low, int high){
-		int n= a.length;
-        int mid;
+		
         if(low<high)
         {
-        	mid = low+(high-low)/2;
+        	int mid = low+(high-low)/2;
         	mergesort(a, temp, low, mid);
         	mergesort(a, temp, mid+1,high);
         	merge(a, temp, low, mid+1, high);
@@ -20,7 +32,7 @@ public class MergeSort {
 		int i;
 		int size=high-low+1;
 		int temp_pos=low;
-		for(;low<=low_end && mid<=high;)
+		while(low<=low_end && mid<=high)
 		{
 			if(a[low]<=a[mid])
 			{
@@ -47,25 +59,8 @@ public class MergeSort {
 		}
 		
 	}
-
-	private static void swap(int []arr, int i , int j)
-	{
-		int temp = arr[i];
-		arr[i]=arr[j];
-		arr[j]= temp;
-	}
 	
-	public static void main(String[] args) {
-		int[] unsortedArray = new int[] { 3, 5, 7, 14, 89, 4, 56, 67, 34, 24,
-				17, 9, 23 };
-		int[] temp = new int[unsortedArray.length]; 
-		int low=0;
-		int high= unsortedArray.length-1;
-		mergesort(unsortedArray,temp, low, high);
-		for (int i : unsortedArray) {
-			System.out.println(i);
-		}
-	}
+	
 
 
 }
