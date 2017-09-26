@@ -36,56 +36,29 @@ public class CheckBST {
 		bTree.addChildBalanced(8);
 		bTree.InorderTraversal(bTree.getRoot());
 	
-		//System.out.println(checkIsBST(bsTree.getRoot()));
+		System.out.println(checkBST(bTree.getRoot()));
 	
 	}
 	
-	private static boolean checkIsBST(TreeNode root) {
-		if(root==null || (root.getLeftChild()==null && root.getRightChild()==null)) return true;
-		
-		boolean left = false;
-		boolean right = false;
-		if(root.getLeftChild()==null) left = true;
-		if(root.getRightChild()==null) right = true;
-		if(root.getLeftChild()!=null && root.getLeftChild().getData()<root.getData()) left = true;
-		
-		if(root.getRightChild()!=null && root.getRightChild().getData()>root.getData()) right = true;
-		
-	    if(checkIsBST(root.getLeftChild()) && checkIsBST(root.getRightChild()) && left && right) return true;
-		
-		return false;
-	}
+	
+	 private static boolean checkBST (TreeNode root)
+	    { 
+	        return check(root,Integer.MIN_VALUE,Integer.MAX_VALUE);
+	    }
 
-	private static boolean checkIsBST(TNode root) {
-		if(root==null || (root.getLeftChild()==null && root.getRightChild()==null)) return true;
-		
-		boolean left = false;
-		boolean right = false;
-		if(root.getLeftChild()==null) left = true;
-		if(root.getRightChild()==null) right = true;
-		if(root.getLeftChild()!=null && maxOfLeftSubTree(root)<root.getData()) left = true;
-		
-		if(root.getRightChild()!=null && minOfRightSubTree(root)>root.getData()) right = true;
-		
-	    if(checkIsBST(root.getLeftChild()) && checkIsBST(root.getRightChild()) && left && right) return true;
-		
-		return false;
-	}
+	  private static  boolean check(TreeNode root, int min, int max){
+	        if (root == null)
+	            return true;
+	        
+	        if(root.getData() <= min || root.getData() >= max) return false;
+	        
+	        return check(root.getLeftChild(), min, root.getData()) && check(root.getRightChild(), root.getData(), max);
+	    }
+	
+	
 
-	private static int minOfRightSubTree(TNode root) {
-		TNode node = root.getRightChild();
-		while(node.getLeftChild()!=null){
-			node =node.getLeftChild();
-		}
-		return node.getData();
-	}
+	
 
-	private static int maxOfLeftSubTree(TNode root) {
-		TNode node = root.getLeftChild();
-		while(node.getRightChild()!=null){
-			node =node.getRightChild();
-		}
-		return node.getData();
-	}
+	
 
 }
