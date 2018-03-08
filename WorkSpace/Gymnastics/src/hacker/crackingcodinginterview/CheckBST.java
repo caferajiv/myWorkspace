@@ -46,4 +46,6 @@ public class CheckBST
             root = root.right;
         }
         return root.data;
-    }}
+    }
+    
+}

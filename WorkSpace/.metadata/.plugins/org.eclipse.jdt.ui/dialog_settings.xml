@@ -13,6 +13,16 @@
 	<section name="SelfEncapsulateFieldWizard">
 		<item value="true" key="GenerateJavadoc"/>
 	</section>
+	<section name="ProblemSeveritiesConfigurationBlock">
+		<item value="false" key="expanded2"/>
+		<item value="true" key="expanded1"/>
+		<item value="false" key="expanded4"/>
+		<item value="false" key="expanded3"/>
+		<item value="false" key="expanded6"/>
+		<item value="false" key="expanded5"/>
+		<item value="false" key="expanded7"/>
+		<item value="false" key="expanded0"/>
+	</section>
 	<section name="DialogBounds_SuperInterfaceSelectionDialog">
 		<item value="309" key="DIALOG_WIDTH"/>
 		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
@@ -94,7 +104,7 @@
 		<item value="5" key="index"/>
 	</section>
 	<section name="BuildPathsPropertyPage">
-		<item value="3" key="pageIndex"/>
+		<item value="0" key="pageIndex"/>
 	</section>
 	<section name="JavaSearchPage">
 		<item value="0" key="HISTORY_SIZE"/>
