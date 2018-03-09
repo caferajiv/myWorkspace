@@ -1,8 +1,6 @@
 package pet;
 
 
-import java.util.ListIterator;
-
 import com.data.list.LinkedList;
 import com.data.node.Node;
 
