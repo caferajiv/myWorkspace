@@ -19,6 +19,7 @@ public class BST2DLL {
 		bst.insert(7);
 		
 		bst.inOrderTraversal();
+		System.out.println();
 		
 		try {
 			convertBST2DLL(bst);
@@ -38,7 +39,7 @@ public class BST2DLL {
 		if(DLL.getHead()!=null && DLL.getHead().getNextDNode()==null){
 			while(DLL.getHead().getPrevDNode()!=null){
 				DNode node = DLL.getHead();
-				System.out.println((Node)node.getItem());
+				System.out.print((Node)node.getItem()+" ");
 				DLL.setHead(node.getPrevDNode());
 			}
 		}

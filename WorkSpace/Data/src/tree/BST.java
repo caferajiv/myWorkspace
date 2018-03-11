@@ -51,7 +51,7 @@ public class BST <T extends Comparable<T>> implements Iterable<T>
    }
 
 
-   private Node<T> root;
+   public Node<T> root;
    private Comparator<T> comparator;
 
    public BST()
@@ -419,6 +419,10 @@ public class BST <T extends Comparable<T>> implements Iterable<T>
       
       public Node getLeftChild(){
     	  return left;
+      }
+      
+      public T getData(){
+    	  return data;
       }
    } //end of Node
 }//end of BST

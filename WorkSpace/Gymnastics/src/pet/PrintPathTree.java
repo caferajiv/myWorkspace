@@ -45,7 +45,6 @@ public class PrintPathTree {
 		if(node.getLeftChild()==null && node.getRightChild()==null){
 			path[index]=node;
 			print(path, index);
-			index--;
 		}else
 		{
 			path[index] = node;
