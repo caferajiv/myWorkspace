@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.function.IntSupplier"/>
 <fullyQualifiedTypeName name="java.util.function.DoubleToIntFunction"/>
 <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
 <fullyQualifiedTypeName name="java.util.Comparator"/>
@@ -40,7 +39,6 @@
 <fullyQualifiedTypeName name="java.sql.Array"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.Stack"/>
-<fullyQualifiedTypeName name="com.data.node.Node"/>
 <fullyQualifiedTypeName name="node.TreeNode"/>
 <fullyQualifiedTypeName name="java.awt.dnd.DnDConstants"/>
 <fullyQualifiedTypeName name="com.data.list.DoubleLinkedList"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="java.util.concurrent.locks.Lock"/>
 <fullyQualifiedTypeName name="java.util.concurrent.locks.ReentrantLock"/>
 <fullyQualifiedTypeName name="java.util.concurrent.locks.Condition"/>
+<fullyQualifiedTypeName name="com.data.node.Node"/>
+<fullyQualifiedTypeName name="com.data.list.LinkedList"/>
 </qualifiedTypeNameHistroy>

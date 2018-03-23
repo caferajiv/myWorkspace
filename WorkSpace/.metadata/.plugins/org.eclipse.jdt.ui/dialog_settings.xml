@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="I:\Java\WorkBench\commons-logging-1.1.2-bin\commons-logging-1.1.2" key="org.eclipse.jdt.ui.lastextjar"/>
+	<item value="F:\gitRepo\work\myWorkspace\WorkSpace\Gymnastics" key="org.eclipse.jdt.ui.lastextjar"/>
 	<item value="filter_imports;" key="filters_last_used"/>
 	<section name="SelfEncapsulateFieldWizard">
 		<item value="true" key="GenerateJavadoc"/>
@@ -117,7 +117,7 @@
 		<item value="5" key="index"/>
 	</section>
 	<section name="BuildPathsPropertyPage">
-		<item value="0" key="pageIndex"/>
+		<item value="2" key="pageIndex"/>
 	</section>
 	<section name="JavaSearchPage">
 		<item value="0" key="HISTORY_SIZE"/>
