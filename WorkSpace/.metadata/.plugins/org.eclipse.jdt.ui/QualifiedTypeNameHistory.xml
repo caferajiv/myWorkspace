@@ -38,7 +38,6 @@
 <fullyQualifiedTypeName name="java.lang.Character"/>
 <fullyQualifiedTypeName name="java.sql.Array"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.Stack"/>
 <fullyQualifiedTypeName name="node.TreeNode"/>
 <fullyQualifiedTypeName name="java.awt.dnd.DnDConstants"/>
 <fullyQualifiedTypeName name="com.data.list.DoubleLinkedList"/>
@@ -58,6 +57,7 @@
 <fullyQualifiedTypeName name="java.util.concurrent.locks.Lock"/>
 <fullyQualifiedTypeName name="java.util.concurrent.locks.ReentrantLock"/>
 <fullyQualifiedTypeName name="java.util.concurrent.locks.Condition"/>
-<fullyQualifiedTypeName name="com.data.node.Node"/>
 <fullyQualifiedTypeName name="com.data.list.LinkedList"/>
+<fullyQualifiedTypeName name="com.data.node.Node"/>
+<fullyQualifiedTypeName name="java.util.Stack"/>
 </qualifiedTypeNameHistroy>

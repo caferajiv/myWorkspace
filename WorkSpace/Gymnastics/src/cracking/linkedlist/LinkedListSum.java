@@ -44,7 +44,10 @@ public class LinkedListSum {
 		LinkedList list4 = addForwardsStack(forlist1.getHead(), forlist2.getHead());
 		list4.showLinkedList();
 		
-		LinkedList list5 = addForwardsRecursion(forlist1.getHead(), forlist2.getHead());
+		
+		forlist1.showLinkedList();
+		forlist2.showLinkedList();
+		LinkedList list5 = addForwardsRecursion(forlist1, forlist2);
 		list5.showLinkedList();
 		
 		
@@ -52,27 +55,56 @@ public class LinkedListSum {
 	
 	}
 
-	private static LinkedList addForwardsRecursion(Node head, Node head2) {
+	private static LinkedList addForwardsRecursion(LinkedList list1, LinkedList list2) {
+		// add zeroes in front of list that is smaller
+		Node head = list1.getHead();
+		Node head2 = list2.getHead();
+		
+		int size1 = getSize(head);
+		int size2 = getSize(head2);
+		int absDiff = Math.abs(size1-size2);
+		if(size1 > size2) {
+			while(absDiff>0) {
+				list2.addFirst(0);
+				absDiff--;
+			}
+		}else  if(size2>size1) {
+			while(absDiff>0) {
+				list1.addFirst(0);
+				absDiff--;
+			}
+			
+		}
+		
 		LinkedList list = new LinkedList();
 		int sum = 0;
 		int carry = 0;
+		
 		calculate(head,head2,list,carry);
-		sum = carry + getValue(head) + getValue(head2);
-		
-		list.addLast(sum%10);
-		carry = sum/10;
-		
+				
 		return list;
 	}
 
-	private static int getValue(Node head) {
-		// TODO Auto-generated method stub
-		return 0;
+	private static int getSize(Node head) {
+		int size =0;
+		while(head!=null) {
+			head= head.getNextNode();
+			size++;
+		}
+		return size;
 	}
 
-	private static void calculate(Node head, Node head2, LinkedList list, int carry) {
+
+	private static int  calculate(Node head, Node head2, LinkedList list, int carry) {
 		
+		if(head.getNextNode()!=null && head2.getNextNode()!=null) {
+			carry = calculate(head.getNextNode(), head2.getNextNode(), list, carry);
+		}
 		
+		int sum = carry + head.getData() + head2.getData();
+		list.addLast(sum%10);
+		carry = sum/10;
+		return carry;
 		
 	}
 
