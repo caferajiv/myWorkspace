@@ -3,6 +3,8 @@ package practice.search.sort;
 import com.data.list.LinkedList;
 import com.data.node.Node;
 
+import sort.MergeSort;
+
 public class MergeSortLinkedList {
 
 	// static int[] arr2;
@@ -21,11 +23,11 @@ public class MergeSortLinkedList {
 
 		int low = 0;
 		int high = arr.length - 1;
-		// mergeSort(arr,arr2,low,high);
+		 MergeSort.mergesort(arr,arr2,low,high);
 
-		// for(int i: arr2){
-		// System.out.print(i+" ");
-		// }
+		 for(int i: arr2){
+		 System.out.print(i+" ");
+		 }
 
 		LinkedList list = new LinkedList();
 
@@ -41,6 +43,8 @@ public class MergeSortLinkedList {
 		list.addLast(144);
 		list.addLast(19);
 		list.addLast(78);
+		
+		System.out.println();
 		list.showLinkedList();
 
 		// list.setHead(head);
@@ -50,12 +54,12 @@ public class MergeSortLinkedList {
 		System.out.println(mid);
 		Node last = getLastNode(list);
 		System.out.println(last);
-		
+		System.out.println();
 		LinkedList temp = new LinkedList();
 
-		mergeSort(list, temp,  low, high);
+		mergeSort(list, temp,  0, size-1);
 		
-		list.showLinkedList();
+		temp.showLinkedList();
 
 	}
 
@@ -78,88 +82,40 @@ public class MergeSortLinkedList {
 		int mi = mid;
 		int size = high - low + 1;
 
-		while (lo <= mid - 1 && mi <= high) {
-			if (getNodeAt(list, lo).getData() <= getNodeAt(list, mi).getData()) {
-				temp.replaceNodeAt(getNodeAt(list, lo), i);
+		while (lo <= mid -1 && mi <= high) {
+			if (getNodeAt(list, lo).getData() <= getNodeAt(list, mid).getData()) {
+				int data = getNodeAt(list, lo).getData();
+				setDataAt(temp,i,data);
 				i++;
 				lo++;
 			} else {
-				//arr2[i] = arr[mi];
-				temp.replaceNodeAt(getNodeAt(list, mi), i);
+				int data = getNodeAt(list, mi).getData();
+				setDataAt(temp,i,data);
 				i++;
 				mi++;
 			}
 		}
 
 		while (lo <= mid - 1) {
-			//arr2[i] = arr[lo];
-			temp.replaceNodeAt(getNodeAt(list, lo), i);
+			int data = getNodeAt(list, lo).getData();
+			setDataAt(temp,i,data);
 			i++;
 			lo++;
 		}
 		while (mi <= high) {
-			//arr2[i] = arr[mi];
-			temp.replaceNodeAt(getNodeAt(list, mi), i);
+			int data = getNodeAt(list, mi).getData();
+			setDataAt(temp,i,data);
 			i++;
 			mi++;
 		}
 
 		for (int j = 0; j < size; j++) {
-			//arr[low] = arr2[low];
-			list.replaceNodeAt(getNodeAt(temp, low), low);
-			low++;
-		}
-
-	
-		
-	}
-
-	private static void mergeSort(int[] arr, int[] arr2, int low, int high) {
-		if (low < high) {
-			int mid = low + (high - low) / 2;
-			mergeSort(arr, arr2, low, mid);
-			mergeSort(arr, arr2, mid + 1, high);
-			merge(arr, arr2, low, mid + 1, high);
+			int data = getNodeAt(list, high).getData();
+			setDataAt(temp,i,data);
+			high--;
 		}
 	}
 
-	private static void merge(int[] arr, int[] arr2, int low, int mid, int high) {
-		int i = low;
-		int lo = low;
-		int hi = high;
-		int mi = mid;
-		int size = high - low + 1;
-
-		while (lo <= mid - 1 && mi <= high) {
-			if (arr[lo] <= arr[mi]) {
-				arr2[i] = arr[lo];
-				i++;
-				lo++;
-			} else {
-				arr2[i] = arr[mi];
-				i++;
-				mi++;
-			}
-		}
-
-		while (lo <= mid - 1) {
-			arr2[i] = arr[lo];
-			i++;
-			lo++;
-		}
-		while (mi <= high) {
-			arr2[i] = arr[mi];
-			i++;
-			mi++;
-		}
-
-		for (int j = 0; j < size; j++) {
-			arr[low] = arr2[low];
-			low++;
-		}
-
-	}
-	
 	private static Node getLastNode(LinkedList list) {
 		Node head = list.getHead();
 		while (head.getNextNode() != null) {
@@ -190,17 +146,30 @@ public class MergeSortLinkedList {
 	
 	private static Node getNodeAt(LinkedList list , int index){
 		int count = 0;
-		
 		Node head = list.getHead();
-		if(index==0) return head;
-		while (head != null) {
+		while(head!=null && count < index) {
 			head = head.getNextNode();
 			count++;
-			if(index==count){
-				return head;
+		}
+		return head;
+	}
+	private static void setDataAt(LinkedList list , int index, int data){
+		int count = 0;
+		Node head = list.getHead();
+		while(head!=null && count < index) {
+			head = head.getNextNode();
+			count++;
+		}
+		
+		if(count<index) {
+			list.addLast(data);
+		}else if(count==index) {
+			if(head==null) {
+				list.addFirst(data);
+			}else {
+				head.setData(data);
 			}
 		}
-		return null;
 	}
 
 }

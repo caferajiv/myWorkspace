@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.function.DoubleToIntFunction"/>
-<fullyQualifiedTypeName name="java.util.stream.Collectors"/>
-<fullyQualifiedTypeName name="java.util.Comparator"/>
 <fullyQualifiedTypeName name="java.util.concurrent.ConcurrentSkipListSet"/>
 <fullyQualifiedTypeName name="java.util.TreeMap"/>
 <fullyQualifiedTypeName name="java.util.concurrent.ConcurrentMap"/>
@@ -60,4 +57,7 @@
 <fullyQualifiedTypeName name="com.data.list.LinkedList"/>
 <fullyQualifiedTypeName name="com.data.node.Node"/>
 <fullyQualifiedTypeName name="java.util.Stack"/>
+<fullyQualifiedTypeName name="sort.MergeSort"/>
+<fullyQualifiedTypeName name="test.cloneable.TestWithoutCloneable"/>
+<fullyQualifiedTypeName name="test.cloneable.CloneableTest"/>
 </qualifiedTypeNameHistroy>
