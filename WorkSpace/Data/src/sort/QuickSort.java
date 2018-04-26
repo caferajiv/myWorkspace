@@ -4,7 +4,6 @@ public class QuickSort {
 
 
 	public static void quicksort(int[] a, int low, int high){
-		int n= a.length;
         int pivot;
         if(low<high)
         {

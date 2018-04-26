@@ -43,8 +43,21 @@ public class Trie {
 
 
 	static class TrieNode {
-		Map<Character, TrieNode> child = new HashMap<>();
+		Map<Character, TrieNode> children = new HashMap<>();
 		boolean isWord = false;
+		private char character;
+		
+		public TrieNode() {
+			children = new HashMap<>();
+		}
+		public TrieNode(char c ) {
+			this();
+			character = c;
+		}
+		
+		public char getChar() {
+			return character;
+		}
 	}
 
 	TrieNode root;
@@ -66,13 +79,13 @@ public class Trie {
 		TrieNode temp = root;
 		int count=0;
 		for(char c: chars) {
-			TrieNode node = temp.child.get(c);
+			TrieNode node = temp.children.get(c);
 			if(node==null) {
 				TrieNode nodeToAdd =  new TrieNode();
 				if(count==chars.length-1) {
 					nodeToAdd.isWord = true;
 				}
-				temp.child.put(c, nodeToAdd);
+				temp.children.put(c, nodeToAdd);
 				temp = nodeToAdd;
 			}else {
 				temp = node;
@@ -83,15 +96,22 @@ public class Trie {
 	
 	
 
-	public int find(String s) {
+	public boolean find(String word, boolean exact) {
+		TrieNode  node = root;
+		if(node==null) return false;
 		
-		return -1;
+		for(int i= 0;i<word.length();i++) {
+			char  c = word.charAt(i);
+			node = node.children.get(c);
+			if(node==null) return false;
+		}
+		return !exact || node.isWord;
 
 	}
 
-	public int searchWord(String s) {
+	public boolean find(String word) {
 
-		return -1;
+		return find(word, false);
 	}
 
 

@@ -32,7 +32,7 @@ public class SelectionSort {
 	int[] sortedArray =	sort(new int[]{3, 5, 7, 14, 89, 4, 56, 67, 34, 24, 17, 9 , 23});
 	for(int i: sortedArray)
 	{
-		System.out.println(i);
+		System.out.print(i + " ");
 	}
 	}
 }

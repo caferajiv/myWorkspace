@@ -121,25 +121,15 @@ return list;
 */
 
 public String toString()
-
 {
-
-if (parent == null)
-
-{
-
-     return "";
-
-}
-
-else
-
-{
-
-     return parent.toString() + new String(new char[] {character});
-
-}
-
+	if (parent == null)
+	{
+		return "";
+	}
+	else
+	{
+		return parent.toString() + new String(new char[] {character});
+	}
 } 
 
 }

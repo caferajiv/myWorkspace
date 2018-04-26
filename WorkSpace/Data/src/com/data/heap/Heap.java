@@ -126,9 +126,10 @@ public class Heap {
 		heapArray[count]=data;
 		count++;
 		int i=count-1;
-		while(i!=-1 && data>heapArray[getParent(i)])
+		int parentIndex = getParent(i);
+		while(i!=-1 && data>heapArray[parentIndex])
 		{
-			swap(heapArray,i,getParent(i));
+			swap(heapArray,i,parentIndex);
 			i=getParent(i);
 		}
 	}
