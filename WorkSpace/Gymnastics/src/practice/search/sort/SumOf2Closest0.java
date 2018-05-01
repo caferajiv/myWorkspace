@@ -1,25 +1,35 @@
 package practice.search.sort;
 
+import java.util.Arrays;
+
 public class SumOf2Closest0 {
 public static void main(String[] args) {
 		
-		int[] arr = {1,3,-25,36,78,100,-111,125,130,144,-159,178};
+		int[] arr = {1,60,-10,70,-80,85};
 		
 		int K = 0;
 		int low = 0;
 		int high = arr.length-1;
-		findSumOf2EqualsK(arr,low, high, K);
+		System.out.println(findSumOf2Closest0(arr,low, high, K));
 	}
 
-	private static void  findSumOf2EqualsK(int[] arr, int low, int high, int K) {
-		if(low>high) return;
-		int mid = (high-low)/2 + low;
-		int min = Integer.MAX_VALUE;
-		while(low<high && high>low){
-			if(arr[low]+arr[high]>K) high--;
-			else if(arr[low]+arr[high]<K)low++;
-			else if(arr[low]+arr[high]==K){ System.out.println("low: "+arr[low]+ " high: "+arr[high]); return;}
+	private static int  findSumOf2Closest0(int[] arr, int low, int high, int K) {
+		Arrays.sort(arr);
+		int minSum = Integer.MAX_VALUE;
+		
+		while(low<high) {
+			int tempSum = arr[low] + arr[high];
+			
+			if(tempSum>0) {
+				minSum = Math.min(tempSum, minSum);
+				high--;
+			}else {
+				minSum = Math.min(Math.abs(tempSum), minSum);
+				low++;
+			}
 		}
+		
+		return minSum;
 	}
 
 }
