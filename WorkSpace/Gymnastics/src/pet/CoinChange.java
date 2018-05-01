@@ -2,8 +2,10 @@ package pet;
 
 public class CoinChange {
 	public static void main(String[] args) {
-		int[] coins = {1,3,9,10};
-		int total = 16;
+		//int[] coins = {1,3,9,10};
+		
+		int[] coins = {1,2,5,10,20,25};
+		int total = 40;
 				
 		System.out.println(getChangeWithDP(total,coins));
 		
