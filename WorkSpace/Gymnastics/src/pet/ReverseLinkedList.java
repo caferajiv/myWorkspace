@@ -9,24 +9,29 @@ public class ReverseLinkedList {
 	public static void main(String[] args) {
 		
 		LinkedList list = new LinkedList();
-		list.addLast(9);
-		list.addLast(3);
-		list.addLast(3);
-		list.addLast(6);
+		list.addLast(1);
 		list.addLast(2);
-		list.addLast(5);
-		list.addLast(8);
+		list.addLast(3);
 		list.addLast(4);
-		list.addLast(7);
-		list.addLast(8);
-		list.addLast(0);
+		//list.addLast(5);
+		//list.addLast(7);
+		//list.addLast(8);
+		//list.addLast(9);
+		//list.addLast(8);
+		//list.addLast(2);
+		//list.addLast(5);
+		//list.addLast(8);
+		//list.addLast(4);
+		//list.addLast(7);
+		//list.addLast(8);
+		//list.addLast(0);
 		
 		
 		
 		list.showLinkedList();
 		
-		reverseList(list);
-		
+		Node head = reverseAlternatePair(list.getHead(),2);
+		list.setHead(head);
 		list.showLinkedList();
 		
 		
@@ -59,6 +64,73 @@ public class ReverseLinkedList {
 		head.setNextNode(backNode);
 		list.setHead(head);
 		
+	}
+	
+	private static Node reverseSimple(Node head) {
+		//Node head = list.getHead();
+		Node temp = null;
+		while(head !=null) {
+			Node nextNode = head.getNextNode();
+			head.setNextNode(temp);
+			temp = head;
+			head = nextNode;
+		}
+		
+		//list.setHead(temp);
+		return temp;
+	} 
+	
+	//1-2-3-4
+	//2-1-4-3
+	private static Node reverseAlternatePair(Node head, int k) {
+		
+		int count = k;
+		Node temp = null;
+		Node nextNode = null;
+		while(head !=null && count>0) {
+			nextNode = head.getNextNode();
+			head.setNextNode(temp);
+			temp = head;
+			head = nextNode;
+			count--;
+		}
+		System.out.println(temp.getData());
+		while(temp.getNextNode()!=null) {
+			temp = temp.getNextNode();
+		}
+		System.out.println(temp.getData());
+		//System.out.println(nextNode.getData());
+		if(nextNode!=null) {
+			temp.setNextNode(reverseAlternatePair(nextNode,k));
+		}
+		
+		//list.setHead(temp);
+		return temp;
+	} 
+		
+	
+	
+	private static void removeOdds(LinkedList list) {
+		Node head = list.getHead();
+		Node temp = null;
+		Node current = head;
+		int count =0;
+		while(current!=null) {
+			if(current.getData()%2==0) {
+				if(count==0) {
+					count++;
+					head = current;
+					temp = head;
+				}else {
+					head.setNextNode(current);
+					head = head.getNextNode();
+				}
+			}
+			current = current.getNextNode();
+		}
+		
+		head.setNextNode(null);
+		list.setHead(temp);
 	}
 		
 	}

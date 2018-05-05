@@ -4,9 +4,9 @@ public class CoinChange {
 	
 	public static void main(String[] args) {
 		
-		int[] coins = {1,4,7,9,11};
+		int[] coins = {1,4,6,9,11};
 		
-		System.out.println(findMinCoins(15,coins));
+		System.out.println(findMinCoins(18,coins));
 		
 	}
 

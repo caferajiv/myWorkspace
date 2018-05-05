@@ -48,10 +48,9 @@ public class Trie {
 		private char character;
 		
 		public TrieNode() {
-			children = new HashMap<>();
+			
 		}
 		public TrieNode(char c ) {
-			this();
 			character = c;
 		}
 		
