@@ -21,23 +21,18 @@ public class Sort012s {
 		int high = arr.length-1;
 		int mid = low + 1;
 		
-		while(low<mid && mid<high){
-			if(arr[low] == 0) low++;
-			if(arr[mid]==1) mid++;
-			if(arr[high]==2) high--;
-			
-			if(arr[low]==1 && arr[mid]==0){
+		while(mid<=high){
+			if(arr[mid] == 0) {
 				swap(arr,low,mid);
+				low++;
 			}
-			if(arr[low]==2 && arr[high]==0){
-				swap(arr,low,high);
-			}
-			if(arr[mid]==2 && arr[high]==1){
+			else if(arr[mid]==1) mid++;
+			
+			else if(arr[mid]==2) {
 				swap(arr,mid,high);
-			}
-			if(arr[mid]==2 && arr[high]==0){
-				swap(arr,mid,high);
-			}
+				high--;
+				}
+			
 		}
 		
 	}

@@ -26,12 +26,12 @@ public class TowersOfHanoi {
 
 	}
 
-	private static void moveDisks(int n, Stack<Integer> source, Stack<Integer> destination, Stack<Integer> buffer) {
+	private static void moveDisks(int n, Stack<Integer> S, Stack<Integer> D, Stack<Integer> B) {
 
 		if(n<=0) return;
-		moveDisks(n-1, source, buffer, destination);
-		moveTop(source,destination);
-		moveDisks(n-1, buffer, destination, source);
+		moveDisks(n-1, S, B, D);
+		moveTop(S,D);
+		moveDisks(n-1, B, D, S);
 	}
 
 	private static void moveTop(Stack<Integer> source, Stack<Integer> destination) {

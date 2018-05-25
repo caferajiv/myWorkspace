@@ -23,7 +23,7 @@ public class LRU {
 			lrucache.put(2, val);
 			
 		}
-		
+		lrucache.put(8, "eighht");
 		System.out.println(lrucache);
 	}
 

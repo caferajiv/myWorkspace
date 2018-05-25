@@ -2,7 +2,7 @@ package pet;
 
 public class ThreadEvenOddString {
 	public static void main(String[] args) {
-		StringPrinter sp = new StringPrinter();
+		NumberPrinter sp = new NumberPrinter();
 		PrinterTask1 pt1 = new PrinterTask1(sp);
 		PrinterTask2 pt2 = new PrinterTask2(sp);
 		
@@ -67,8 +67,8 @@ class StringPrinter {
 
 class PrinterTask1 implements Runnable
 {
-	StringPrinter sp;
-	PrinterTask1 (StringPrinter sp) {
+	NumberPrinter sp;
+	PrinterTask1 (NumberPrinter sp) {
 		this.sp = sp;
 	}
 	@Override
@@ -81,8 +81,8 @@ class PrinterTask1 implements Runnable
 
 class PrinterTask2 implements Runnable
 {
-	StringPrinter sp;
-	PrinterTask2 (StringPrinter sp) {
+	NumberPrinter sp;
+	PrinterTask2 (NumberPrinter sp) {
 		this.sp = sp;
 	}
 

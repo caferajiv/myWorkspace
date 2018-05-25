@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="cracking.arraystring.CheckAnagram"/>
-<fullyQualifiedTypeName name="hacker.crackingcodinginterview.ArrayLeftRotation"/>
-<fullyQualifiedTypeName name="java.io.PushbackInputStream"/>
-<fullyQualifiedTypeName name="java.util.Collections"/>
-<fullyQualifiedTypeName name="java.util.PriorityQueue"/>
-<fullyQualifiedTypeName name="hacker.crackingcodinginterview.ConnectedGrid.Position"/>
-<fullyQualifiedTypeName name="hacker.crackingcodinginterview.ConnectedGrid.Vertex"/>
-<fullyQualifiedTypeName name="hacker.crackingcodinginterview.BFSSearch.Edge"/>
 <fullyQualifiedTypeName name="javax.print.attribute.HashAttributeSet"/>
 <fullyQualifiedTypeName name="sun.security.provider.certpath.AdjacencyList"/>
 <fullyQualifiedTypeName name="java.util.ArrayDeque"/>
@@ -53,11 +45,19 @@
 <fullyQualifiedTypeName name="java.util.Stack"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.util.stream.Stream"/>
 <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
 <fullyQualifiedTypeName name="pet.StringPrinter"/>
 <fullyQualifiedTypeName name="pet.PrinterTask1"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="java.net.URL"/>
+<fullyQualifiedTypeName name="com.sun.net.ssl.HttpsURLConnection"/>
+<fullyQualifiedTypeName name="java.net.URLConnection"/>
+<fullyQualifiedTypeName name="java.net.HttpURLConnection"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="threads.avgCalc.SumCalculator"/>
 </qualifiedTypeNameHistroy>
