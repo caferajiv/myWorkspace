@@ -45,8 +45,12 @@ public class LoadControlServiceImpl implements LoadControlService {
 
 	@Override
 	public boolean deregisterModule(String moduleName) {
-		// TODO Auto-generated method stub
+		if(moduleExecutorsMap.containsKey(moduleName)) {
+			moduleExecutorsMap.remove(moduleName);
+			return true;
+		}
 		return false;
+			
 	}
 
 	@Override
