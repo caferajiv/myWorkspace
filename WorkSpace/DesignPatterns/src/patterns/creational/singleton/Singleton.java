@@ -1,24 +1,24 @@
 package patterns.creational.singleton;
 
 public class Singleton {
-	private static Singleton singleton;
+	
+	private Singleton() {}
 
-	private Singleton() {
+	/**
+	 * The inner class is referenced no earlier 
+	 * (and therefore loaded no earlier by the class loader) 
+	 * than the moment that getInstance() is called.
+	 * Thus, this solution is thread-safe without requiring 
+	 * special language constructs (i.e. volatile or synchronized).
+	 * @author Rajiv
+	 *
+	 */
+	private static class SingletonHolder {
+		private static final Singleton INSTANCE = new Singleton();
 	}
 
-	// return only one spooler instance
-	public static synchronized Singleton getInstance() 
-	{
-		if (singleton == null) {
-			synchronized (Singleton.class) {
-				if (singleton == null) // if none created
-					singleton = new Singleton(); // create one
-			}
-		}
-		return singleton; // return it
+	public static Singleton getInstance() {
+		return SingletonHolder.INSTANCE;
 	}
-
-	public void print(String s) {
-		System.out.println(s);
-	}
+	
 }
