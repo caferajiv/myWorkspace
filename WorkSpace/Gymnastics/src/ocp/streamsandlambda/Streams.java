@@ -256,8 +256,8 @@ public class Streams {
 		
 		
 		s = Arrays.asList("aa","bb","cc","dd").stream();
-		System.out.println(s.collect(StringBuilder::new,StringBuilder::append,StringBuilder::append));
-		
+	System.out.println(s.collect(StringBuilder::new, StringBuilder::append, StringBuilder::append));
+
 		s = Arrays.asList("aa","bb","cc","dd").stream();
 		System.out.println(s.collect(TreeSet::new,TreeSet::add,TreeSet::addAll));
 		
