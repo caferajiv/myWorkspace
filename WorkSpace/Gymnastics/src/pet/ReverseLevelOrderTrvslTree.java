@@ -1,10 +1,14 @@
 package pet;
 
-import java.util.Stack;
 
-import sun.misc.Queue;
+
 import tree.BST;
 import tree.BinarySearchTree;
+
+import java.util.*;
+
+
+
 import geeks.tree.BST2DLL;
 
 public class ReverseLevelOrderTrvslTree {
@@ -32,18 +36,18 @@ public class ReverseLevelOrderTrvslTree {
 
 	private static void reverseLevelOrder(BST bst) throws Exception {
 		
-		Queue queue = new Queue();
+		Queue queue = new LinkedList<BST.Node>();
 		Stack<BST.Node> stack = new Stack<BST.Node>();
-		queue.enqueue(bst.getRoot());
+		queue.offer(bst.getRoot());
 		while(!queue.isEmpty()){
-			BST.Node node = (BST.Node)queue.dequeue();
+			BST.Node node = (BST.Node)queue.poll();
 			stack.push(node);
 			if(node!=null){
 				if(node.getRightChild()!=null){
-					queue.enqueue(node.getRightChild());
+					queue.offer(node.getRightChild());
 				}
 				if(node.getLeftChild()!=null){
-					queue.enqueue(node.getLeftChild());
+					queue.offer(node.getLeftChild());
 				}
 			}
 		}
