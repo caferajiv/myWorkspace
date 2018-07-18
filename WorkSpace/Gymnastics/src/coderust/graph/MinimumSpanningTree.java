@@ -1,7 +1,10 @@
 package coderust.graph;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class MinimumSpanningTree {
 	
@@ -57,8 +60,19 @@ public class MinimumSpanningTree {
 		  private List<edge> e;     //edges
 
 		  int find_min_spanning_tree() {
-		    //TODO: Write - Your - Code
-		    return -1;
+		    Collections.sort(e, (a,b) -> a.weight-b.weight);
+			
+		    Set<vertex> set = new HashSet<>();
+		    int totalWeight = 0;
+		    for(edge ed : e) {
+				  totalWeight = totalWeight + ed.weight;
+				  set.add(ed.src);
+				  if(set.size()>= g.size()) break;
+				  set.add(ed.dest);
+				  if(set.size()>= g.size()) break;
+		    	
+			  }
+		    return totalWeight;
 		  }
 		  
 		  public graph(List<vertex> g, List<edge> e) {
