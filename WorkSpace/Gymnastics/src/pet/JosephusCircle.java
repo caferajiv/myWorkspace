@@ -1,11 +1,8 @@
 package pet;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.ListIterator;
-
-import com.sun.org.apache.bcel.internal.generic.LSTORE;
 
 public class JosephusCircle {
 

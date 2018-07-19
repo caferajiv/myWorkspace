@@ -1,12 +1,9 @@
 package ocp.genericscollections;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
 
 public class TestCollections {
 	public static void main(String[] args) {

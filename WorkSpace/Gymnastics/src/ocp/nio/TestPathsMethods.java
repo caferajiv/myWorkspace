@@ -3,10 +3,8 @@ package ocp.nio;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.nio.file.CopyOption;
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
-import java.nio.file.FileVisitOption;
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
@@ -17,12 +15,6 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
 import java.nio.file.attribute.UserPrincipal;
 import java.time.Instant;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
-import com.sun.scenario.effect.impl.state.LinearConvolveKernel;
-
-import tgipl.test.TestAbstract;
 
 public class TestPathsMethods {
 	public static void main(String[] args) {

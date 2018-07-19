@@ -1,7 +1,5 @@
 package pet;
 
-import com.sun.xml.internal.fastinfoset.util.CharArrayArray;
-
 public class ReverseString {
 
 	//rotate abcdefg to cdefgab
