@@ -1,13 +1,21 @@
 package ocp.overridingboxing;
 
+import java.util.*;
 public class OverridingTest {
 	
 	public static void main(String[] args) {
 	
-		int[] arr = {1,2,3};
+		double[] arr = new double[10000];
 		for(var i: arr) {
-			System.out.println(i);
+			//System.out.println(i);
 		}
+		try {
+		throw new OutOfMemoryError();
+		}catch(Throwable t) {
+			t.printStackTrace();
+		}
+		
+		System.out.println("caught OOM");
 	}
 	
 	static class A {
